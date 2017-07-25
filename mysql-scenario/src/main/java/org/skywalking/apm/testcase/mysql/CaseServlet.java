@@ -22,13 +22,11 @@ public class CaseServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        SQLExecute sqlExecute = null;
+        SQLExecutor sqlExecute = null;
         try {
-            sqlExecute = new SQLExecute();
+            sqlExecute = new SQLExecutor();
             sqlExecute.createTable(CREATE_TABLE_SQL);
             sqlExecute.insertData(INSERT_DATA_SQL, "1", "1");
-            sqlExecute.queryData(QUERY_DATA_SQL, "1");
-            sqlExecute.deleteData(DELETE_DATA_SQL, "1");
             sqlExecute.dropTable(DROP_TABLE_SQL);
             PrintWriter printWriter = resp.getWriter();
             printWriter.write("success");
