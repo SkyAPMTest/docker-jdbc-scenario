@@ -7,7 +7,6 @@ ENV COLLECTOR_SERVER=127.0.0.1:12800 \
 
 COPY catalina.sh /usr/local/tomcat/bin/
 ADD mysql-case /usr/local/tomcat/webapps/mysql-case
-COPY sky-walking.config /usr/local/tomcat/agent-config/sky-walking.config
 COPY jdbc.properties /usr/local/tomcat/webapps/mysql-case/WEB-INF/classes/
 
 ADD docker-entrypoint.sh /
